@@ -11,6 +11,7 @@ This repository contains the source code for the official East SMP website.
 ## Development
 
 This website is currently under development. More features and improvements will be added over time.
+I used AI but i mostly coded the AI was checking my code and i double checked after
 
 ## License
 
