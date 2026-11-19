@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#080B14">
+	<meta name="description" content="Follow the East SMP story, episodes, and important events.">
+	<title>East SMP Story</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/navbar.css">
+	<link rel="stylesheet" href="../styles/dropdown.css">
+	<link rel="stylesheet" href="../styles/story.css">
+	<script src="../functions/navigation.js" defer></script>
+	<script src="../functions/dropdown.js" defer></script>
+	<script src="../functions/eastsmp.js" defer></script>
+</head>
+<body class="story-page">
+	<header class="site-header">
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+			<span class="sr-only">Toggle navigation</span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<a class="brand" href="index.html#home" aria-label="East SMP home">
+			<span class="brand-mark" aria-hidden="true">E</span>
+			<span>EAST <span class="brand-light">SMP</span></span>
+		</a>
+
+		<a class="top-join" href="https://discord.gg/mrUUjDzKrj" target="_blank" rel="noopener noreferrer">
+			Join Discord <span aria-hidden="true">↗</span>
+		</a>
+
+		<nav class="site-nav" id="site-nav" aria-label="Main navigation">
+			<a href="index.html#home">Home</a>
+			<a href="index.html#official-rules">Rules</a>
+			<a href="index.html#server-info">Server Info</a>
+			<a href="#story" aria-current="page">Story</a>
+			<a href="map.html">Map</a>
+			<a href="roles.html">Roles</a>
+			<a href="applications.html">Applications</a>
+			<a href="announcements.html">Announcements</a>
+			<a href="events.html">Events</a>
+			<a href="voting.html">Voting</a>
+			<a href="update.html">Updates</a>
+			<a class="nav-join" href="index.html#join">Join the Discord <span aria-hidden="true">↓</span></a>
+		</nav>
+	</header>
+
+	<details class="server-status-dropdown" data-server-address="n-dal-1.folium.host:25711">
+		<summary>
+			<span class="status-summary-title">Server Status</span>
+			<span class="status-summary-icon" aria-hidden="true"></span>
+		</summary>
+		<div class="status-panel" aria-live="polite">
+			<div class="status-server-state">
+				<span class="status-indicator" id="minecraft-status-indicator" aria-hidden="true"></span>
+				<strong id="minecraft-status-text">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Players:</span>
+				<strong id="minecraft-player-count">Checking...</strong>
+			</div>
+			<p class="status-last-checked">Last Checked: <time id="minecraft-last-checked">Checking...</time></p>
+			<div class="status-divider"></div>
+			<h2 class="status-discord-heading">Discord</h2>
+			<div class="status-metric">
+				<span>Online Members:</span>
+				<strong id="discord-online-count">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Total Members:</span>
+				<strong id="discord-total-count">Checking...</strong>
+			</div>
+		</div>
+	</details>
+
+	<main id="story">
+		<section class="story-title section-wrap" aria-labelledby="story-title">
+			<p class="eyebrow"><span class="status-dot"></span> THE EAST SMP JOURNEY</p>
+			<h1 id="story-title">East SMP <span>Story</span></h1>
+			<div class="story-meta">
+				<span>Website Version: <strong>beta 1.0</strong></span>
+				<span>Last Updated: <time datetime="2026-11">November 2026</time></span>
+			</div>
+		</section>
+
+		<div class="story-content section-wrap">
+			<section class="story-card story-card-intro">
+				<p class="section-label">THE JOURNEY</p>
+				<h2>Every world has a beginning.<br><span>This one is yours to discover.</span></h2>
+				<p>East SMP is a scripted Minecraft survival multiplayer world built around a shared story. Join the community and find out what comes next.</p>
+				<div class="story-status">
+					<h3>Story coming soon</h3>
+					<p>The East SMP story has not officially started yet.</p>
+					<p>Our first episodes are currently being prepared.</p>
+					<p>Once videos are released, this page will show the journey of the East SMP.</p>
+				</div>
+				<a class="inline-link" href="https://discord.gg/mrUUjDzKrj" target="_blank" rel="noopener noreferrer">
+					Find your way in <span aria-hidden="true">↗</span>
+				</a>
+			</section>
+
+			<section class="story-card story-card-episodes">
+				<p class="section-label">EPISODES</p>
+				<h2>Episodes</h2>
+				<p>No episodes released yet.</p>
+			</section>
+			<section class="story-card story-card-events">
+				<p class="section-label">IMPORTANT MOMENTS</p>
+				<h2>Events</h2>
+				<p>Future events and important moments will appear here.</p>
+			</section>
+		</div>
+	</main>
+
+	<footer class="site-footer">
+		<a class="brand footer-brand" href="index.html#home">
+			<span class="brand-mark" aria-hidden="true">E</span>
+			<span>EAST <span class="brand-light">SMP</span></span>
+		</a>
+		<p>East SMP <span class="footer-divider">·</span> Story</p>
+		<p>© <span id="copyright-year">2026</span> East SMP. All rights reserved.</p>
+	</footer>
+</body>
+</html>

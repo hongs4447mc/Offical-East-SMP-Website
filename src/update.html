@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#080B14">
+	<meta name="description" content="Website and server changelog for East SMP.">
+	<title>East SMP — Update Logger</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/navbar.css">
+	<link rel="stylesheet" href="../styles/dropdown.css">
+	<link rel="stylesheet" href="../styles/update.css">
+	<script src="../functions/navigation.js" defer></script>
+	<script src="../functions/dropdown.js" defer></script>
+	<script src="../functions/eastsmp.js" defer></script>
+</head>
+<body class="update-page">
+	<header class="site-header">
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+			<span class="sr-only">Toggle navigation</span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<a class="brand" href="index.html#home" aria-label="East SMP home">
+			<span class="brand-mark" aria-hidden="true">E</span>
+			<span>EAST <span class="brand-light">SMP</span></span>
+		</a>
+
+		<a class="top-join" href="https://discord.gg/mrUUjDzKrj" target="_blank" rel="noopener noreferrer">
+			Join Discord <span aria-hidden="true">↗</span>
+		</a>
+
+		<nav class="site-nav" id="site-nav" aria-label="Main navigation">
+			<a href="index.html#home">Home</a>
+			<a href="index.html#official-rules">Rules</a>
+			<a href="index.html#server-info">Server Info</a>
+			<a href="story.html">Story</a>
+			<a href="map.html">Map</a>
+			<a href="roles.html">Roles</a>
+			<a href="applications.html">Applications</a>
+			<a href="announcements.html">Announcements</a>
+			<a href="events.html">Events</a>
+			<a href="voting.html">Voting</a>
+			<a href="#updates" aria-current="page">Updates</a>
+			<a class="nav-join" href="index.html#join">Join the Discord <span aria-hidden="true">↓</span></a>
+		</nav>
+	</header>
+
+	<details class="server-status-dropdown" data-server-address="n-dal-1.folium.host:25711">
+		<summary>
+			<span class="status-summary-title">Server Status</span>
+			<span class="status-summary-icon" aria-hidden="true"></span>
+		</summary>
+		<div class="status-panel" aria-live="polite">
+			<div class="status-server-state">
+				<span class="status-indicator" id="minecraft-status-indicator" aria-hidden="true"></span>
+				<strong id="minecraft-status-text">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Players:</span>
+				<strong id="minecraft-player-count">Checking...</strong>
+			</div>
+			<p class="status-last-checked">Last Checked: <time id="minecraft-last-checked">Checking...</time></p>
+			<div class="status-divider"></div>
+			<h2 class="status-discord-heading">Discord</h2>
+			<div class="status-metric">
+				<span>Online Members:</span>
+				<strong id="discord-online-count">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Total Members:</span>
+				<strong id="discord-total-count">Checking...</strong>
+			</div>
+		</div>
+	</details>
+
+	<main id="updates">
+		<header class="update-title">
+			<h1>East SMP Update Logger</h1>
+			<p>Website and server changelog.</p>
+			<p class="update-meta"><strong>Website Version:</strong> beta 1.0<br><strong>Last Updated:</strong> November 2026</p>
+		</header>
+
+		<div class="update-content">
+			<article class="update-entry">
+				<h2>Beta 1.0 Release &amp; New Features</h2>
+				<p class="update-summary">Made the East SMP website.</p>
+				<p class="update-date">Date: November 2026</p>
+
+				<h3 class="change-category change-category-added">Added</h3>
+				<ul class="change-list">
+					<li>East SMP website launched</li>
+					
+				</ul>
+
+				<h3 class="change-category change-category-changed">Changed</h3>
+				<ul class="change-list">
+					<li>Nothing</li>
+				</ul>
+
+				<h3 class="change-category change-category-fixed">Fixed</h3>
+				<ul class="change-list">
+					<li>Nothing</li>
+				</ul>
+
+				<h3 class="change-category change-category-removed">Removed</h3>
+				<ul class="change-list">
+					<li>Nothing</li>
+				</ul>
+			</article>
+		</div>
+	</main>
+</body>
+</html>

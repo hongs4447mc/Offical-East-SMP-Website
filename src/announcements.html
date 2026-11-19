@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#080B14">
+	<meta name="description" content="The latest announcements from East SMP.">
+	<title>East SMP — Announcements</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/navbar.css">
+	<link rel="stylesheet" href="../styles/dropdown.css">
+	<link rel="stylesheet" href="../styles/announcements.css">
+	<script src="../functions/navigation.js" defer></script>
+	<script src="../functions/dropdown.js" defer></script>
+	<script src="../functions/eastsmp.js" defer></script>
+	<script src="../functions/supabase-config.js" defer></script>
+	<script src="../functions/community-content.js" defer></script>
+</head>
+<body class="announcements-page">
+	<header class="site-header">
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+			<span class="sr-only">Toggle navigation</span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<a class="brand" href="index.html#home" aria-label="East SMP home">
+			<span class="brand-mark" aria-hidden="true">E</span>
+			<span>EAST <span class="brand-light">SMP</span></span>
+		</a>
+
+		<a class="top-join" href="https://discord.gg/mrUUjDzKrj" target="_blank" rel="noopener noreferrer">
+			Join Discord <span aria-hidden="true">↗</span>
+		</a>
+
+		<nav class="site-nav" id="site-nav" aria-label="Main navigation">
+			<a href="index.html#home">Home</a>
+			<a href="index.html#official-rules">Rules</a>
+			<a href="index.html#server-info">Server Info</a>
+			<a href="story.html">Story</a>
+			<a href="map.html">Map</a>
+			<a href="roles.html">Roles</a>
+			<a href="applications.html">Applications</a>
+			<a href="#announcements" aria-current="page">Announcements</a>
+			<a href="events.html">Events</a>
+			<a href="voting.html">Voting</a>
+			<a href="update.html">Updates</a>
+			<a class="nav-join" href="index.html#join">Join the Discord <span aria-hidden="true">↓</span></a>
+		</nav>
+	</header>
+
+	<details class="server-status-dropdown" data-server-address="n-dal-1.folium.host:25711">
+		<summary>
+			<span class="status-summary-title">Server Status</span>
+			<span class="status-summary-icon" aria-hidden="true"></span>
+		</summary>
+		<div class="status-panel" aria-live="polite">
+			<div class="status-server-state">
+				<span class="status-indicator" id="minecraft-status-indicator" aria-hidden="true"></span>
+				<strong id="minecraft-status-text">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Players:</span>
+				<strong id="minecraft-player-count">Checking...</strong>
+			</div>
+			<p class="status-last-checked">Last Checked: <time id="minecraft-last-checked">Checking...</time></p>
+			<div class="status-divider"></div>
+			<h2 class="status-discord-heading">Discord</h2>
+			<div class="status-metric">
+				<span>Online Members:</span>
+				<strong id="discord-online-count">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Total Members:</span>
+				<strong id="discord-total-count">Checking...</strong>
+			</div>
+		</div>
+	</details>
+
+	<main id="announcements">
+		<header class="announcements-title">
+			<p class="section-label"><span>01</span> / EAST SMP NEWS</p>
+			<h1>East SMP <span>Announcements</span></h1>
+			<p>Important news and updates from the East SMP team.</p>
+		</header>
+
+		<section class="announcements-content" aria-label="Latest announcements">
+			<div class="community-content-list" id="announcements-list" aria-live="polite">
+				<article class="announcement-empty">
+					<span class="announcement-icon" aria-hidden="true">!</span>
+					<h2>Loading announcements...</h2>
+					<p>Checking for the latest news from the East SMP team.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="events-content" aria-labelledby="events-heading">
+			<header class="events-section-heading">
+				<p class="section-label">COMMUNITY CALENDAR</p>
+				<h2 id="events-heading">Upcoming <span>Events</span></h2>
+				<a class="events-calendar-link" href="events.html">Open full calendar <span aria-hidden="true">→</span></a>
+			</header>
+			<div class="community-content-list" id="events-list" aria-live="polite">
+				<article class="announcement-empty"><h3>Loading events...</h3></article>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

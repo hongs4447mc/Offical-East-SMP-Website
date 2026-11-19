@@ -1,0 +1,148 @@
+body.map-page {
+	background:
+		radial-gradient(ellipse at 50% -12%, rgba(0, 20, 204, 0.38), transparent 55%),
+		var(--background);
+}
+
+.map-title {
+	padding: 64px 8.2% 28px;
+	text-align: center;
+}
+
+.map-title h1 {
+	margin: 12px 0;
+	font-size: clamp(42px, 7vw, 68px);
+	letter-spacing: -0.065em;
+}
+
+.map-title h1 span {
+	color: var(--accent);
+}
+
+.map-title > p:last-child {
+	max-width: 650px;
+	margin: 0 auto;
+	color: var(--muted);
+	line-height: 1.7;
+}
+
+.map-content {
+	width: min(94%, 1500px);
+	margin: 0 auto;
+	padding-bottom: 72px;
+}
+
+.map-frame-wrap {
+	position: relative;
+	min-height: min(72vh, 780px);
+	overflow: hidden;
+	border: 1px solid rgba(255, 255, 255, 0.13);
+	border-radius: 20px;
+	background: rgba(15, 20, 32, 0.9);
+	box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+}
+
+.map-frame {
+	display: block;
+	width: 100%;
+	height: min(72vh, 780px);
+	min-height: 560px;
+	border: 0;
+	background: #0c111b;
+}
+
+.map-frame[hidden],
+.map-notice[hidden] {
+	display: none;
+}
+
+.map-notice {
+	display: grid;
+	min-height: min(72vh, 780px);
+	place-content: center;
+	justify-items: center;
+	gap: 12px;
+	padding: 36px;
+	text-align: center;
+}
+
+.map-notice .section-label {
+	margin: 0;
+	color: var(--accent);
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+}
+
+.map-notice h2 {
+	max-width: 680px;
+	margin: 0;
+	font-size: clamp(22px, 4vw, 34px);
+}
+
+.map-notice p {
+	max-width: 620px;
+	margin: 0;
+	color: var(--muted);
+	font-size: 13px;
+	line-height: 1.7;
+}
+
+.map-link {
+	display: inline-flex;
+	min-height: 42px;
+	align-items: center;
+	justify-content: center;
+	margin-top: 8px;
+	padding: 0 18px;
+	border: 1px solid rgba(0, 207, 255, 0.45);
+	border-radius: 999px;
+	background: rgba(0, 207, 255, 0.1);
+	color: var(--text);
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.map-link:hover {
+	border-color: var(--accent);
+	background: rgba(0, 207, 255, 0.18);
+}
+
+.map-open-link {
+	display: inline-flex;
+	margin-top: 16px;
+	color: var(--accent);
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.map-open-link[hidden] {
+	display: none;
+}
+
+.map-privacy-note {
+	margin: 12px 4px 0;
+	color: var(--muted);
+	font-size: 11px;
+	line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+	.map-title {
+		padding-top: 44px;
+	}
+
+	.map-content {
+		width: 96%;
+	}
+
+	.map-frame-wrap,
+	.map-notice {
+		min-height: 68vh;
+	}
+
+	.map-frame {
+		height: 68vh;
+		min-height: 500px;
+	}
+}

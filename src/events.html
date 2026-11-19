@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#080B14">
+	<meta name="description" content="Browse East SMP community events, activities, and past results.">
+	<title>East SMP — Events</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/navbar.css">
+	<link rel="stylesheet" href="../styles/events.css">
+	<script src="../functions/navigation.js" defer></script>
+	<script src="../functions/supabase-config.js" defer></script>
+	<script src="../functions/events.js" defer></script>
+</head>
+<body class="events-page">
+	<header class="site-header">
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+			<span class="sr-only">Toggle navigation</span><span></span><span></span><span></span>
+		</button>
+		<a class="brand" href="index.html#home" aria-label="East SMP home">
+			<span class="brand-mark" aria-hidden="true">E</span><span>EAST <span class="brand-light">SMP</span></span>
+		</a>
+		<a class="top-join" href="https://discord.gg/mrUUjDzKrj" target="_blank" rel="noopener noreferrer">Join Discord <span aria-hidden="true">↗</span></a>
+		<nav class="site-nav" id="site-nav" aria-label="Main navigation">
+			<a href="index.html#home">Home</a>
+			<a href="index.html#official-rules">Rules</a>
+			<a href="index.html#server-info">Server Info</a>
+			<a href="story.html">Story</a>
+			<a href="map.html">Map</a>
+			<a href="roles.html">Roles</a>
+			<a href="applications.html">Applications</a>
+			<a href="announcements.html">Announcements</a>
+			<a href="events.html" aria-current="page">Events</a>
+			<a href="voting.html">Voting</a>
+			<a href="update.html">Updates</a>
+			<a class="nav-join" href="index.html#join">Join the Discord <span aria-hidden="true">↓</span></a>
+		</nav>
+	</header>
+
+	<main class="events-main">
+		<header class="events-title">
+			<p class="section-label">COMMUNITY CALENDAR</p>
+			<h1>East SMP <span>Events</span></h1>
+			<p>Find community activities, see what is coming up, and revisit past events. All times are shown in your local timezone.</p>
+		</header>
+
+		<section class="calendar-panel" aria-label="Event calendar">
+			<div class="calendar-toolbar">
+				<div class="calendar-views" role="group" aria-label="Calendar view">
+					<button type="button" data-view="month" aria-pressed="true">Month</button>
+					<button type="button" data-view="week" aria-pressed="false">Week</button>
+					<button type="button" data-view="upcoming" aria-pressed="false">Upcoming</button>
+					<button type="button" data-view="past" aria-pressed="false">Past events</button>
+				</div>
+				<label class="calendar-category">Category
+					<select id="event-category-filter">
+						<option value="all">All categories</option>
+						<option value="community">Community</option>
+						<option value="pvp">PvP</option>
+						<option value="building">Building</option>
+						<option value="survival">Survival</option>
+						<option value="special">Special</option>
+						<option value="maintenance">Maintenance</option>
+					</select>
+				</label>
+			</div>
+			<div class="calendar-navigation">
+				<button type="button" id="calendar-previous" aria-label="Previous period">←</button>
+				<h2 id="calendar-heading">Loading calendar...</h2>
+				<button type="button" id="calendar-next" aria-label="Next period">→</button>
+			</div>
+			<p class="calendar-status" id="calendar-status" role="status" aria-live="polite">Loading events...</p>
+			<div id="calendar-view" aria-live="polite"></div>
+		</section>
+	</main>
+</body>
+</html>

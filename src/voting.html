@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#080B14">
+	<meta name="description" content="Vote for East SMP and support the server.">
+	<title>East SMP — Voting</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/navbar.css">
+	<link rel="stylesheet" href="../styles/dropdown.css">
+	<link rel="stylesheet" href="../styles/voting.css">
+	<script src="../functions/navigation.js" defer></script>
+	<script src="../functions/dropdown.js" defer></script>
+	<script src="../functions/eastsmp.js" defer></script>
+	<script src="../functions/player-heads.js" defer></script>
+	<script src="../functions/supabase-config.js" defer></script>
+	<script src="../functions/voting.js" defer></script>
+	<script src="../functions/community-polls.js" defer></script>
+</head>
+<body class="voting-page">
+	<header class="site-header">
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+			<span class="sr-only">Toggle navigation</span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<a class="brand" href="index.html#home" aria-label="East SMP home">
+			<span class="brand-mark" aria-hidden="true">E</span>
+			<span>EAST <span class="brand-light">SMP</span></span>
+		</a>
+
+		<a class="top-join" href="https://discord.gg/mrUUjDzKrj" target="_blank" rel="noopener noreferrer">
+			Join Discord <span aria-hidden="true">↗</span>
+		</a>
+
+		<nav class="site-nav" id="site-nav" aria-label="Main navigation">
+			<a href="index.html#home">Home</a>
+			<a href="index.html#official-rules">Rules</a>
+			<a href="index.html#server-info">Server Info</a>
+			<a href="story.html">Story</a>
+			<a href="map.html">Map</a>
+			<a href="roles.html">Roles</a>
+			<a href="applications.html">Applications</a>
+			<a href="announcements.html">Announcements</a>
+			<a href="events.html">Events</a>
+			<a href="#voting" aria-current="page">Voting</a>
+			<a href="update.html">Updates</a>
+			<a class="nav-join" href="index.html#join">Join the Discord <span aria-hidden="true">↓</span></a>
+		</nav>
+	</header>
+
+	<details class="server-status-dropdown" data-server-address="n-dal-1.folium.host:25711">
+		<summary>
+			<span class="status-summary-title">Server Status</span>
+			<span class="status-summary-icon" aria-hidden="true"></span>
+		</summary>
+		<div class="status-panel" aria-live="polite">
+			<div class="status-server-state">
+				<span class="status-indicator" id="minecraft-status-indicator" aria-hidden="true"></span>
+				<strong id="minecraft-status-text">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Players:</span>
+				<strong id="minecraft-player-count">Checking...</strong>
+			</div>
+			<p class="status-last-checked">Last Checked: <time id="minecraft-last-checked">Checking...</time></p>
+			<div class="status-divider"></div>
+			<h2 class="status-discord-heading">Discord</h2>
+			<div class="status-metric">
+				<span>Online Members:</span>
+				<strong id="discord-online-count">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Total Members:</span>
+				<strong id="discord-total-count">Checking...</strong>
+			</div>
+		</div>
+	</details>
+
+	<main id="voting">
+		<header class="voting-title">
+			<p class="section-label"><span>01</span> / SUPPORT THE SERVER</p>
+			<h1>Vote for East <span>SMP</span></h1>
+			<p>Help more players discover the server by voting.</p>
+		</header>
+
+		<section class="voting-content" aria-label="East SMP voting links">
+			<form class="protagonist-poll" id="protagonist-vote-form">
+				<p class="poll-label">COMMUNITY POLL</p>
+				<h2>Who is the best protagonist?</h2>
+				<p class="poll-description">Choose your favorite East SMP protagonist.</p>
+				<p class="poll-scope">Votes and totals are shared with everyone. Your browser saves your vote so you can change it later.</p>
+				<div class="poll-total">
+					<span>Total votes</span>
+					<strong id="total-votes" aria-live="polite">—</strong>
+				</div>
+
+				<div class="vote-options">
+					<label class="vote-option vote-red">
+						<input type="radio" name="protagonist" value="east" required disabled>
+						<span class="vote-option-content">
+							<span class="vote-avatar player-head" data-minecraft-name="Eastboygames" aria-hidden="true">E</span>
+							<span class="vote-name">Eastboygames <span>(East)</span></span>
+							<span class="vote-count" id="vote-count-east">—</span>
+						</span>
+					</label>
+
+					<label class="vote-option vote-blue">
+						<input type="radio" name="protagonist" value="hongs" required disabled>
+						<span class="vote-option-content">
+							<span class="vote-avatar player-head" data-minecraft-name="Hongs4447" aria-hidden="true">H</span>
+							<span class="vote-name">Hongs4447 <span>(Hongs)</span></span>
+							<span class="vote-count" id="vote-count-hongs">—</span>
+						</span>
+					</label>
+
+					<label class="vote-option vote-green">
+						<input type="radio" name="protagonist" value="turtlebee" required disabled>
+						<span class="vote-option-content">
+							<span class="vote-avatar player-head" data-minecraft-name="TurtleBeeMaster" data-minecraft-uuid="638a3bdb00974e05bd99324bdaf1f3a8" data-head-url="https://crafthead.net/avatar/638a3bdb00974e05bd99324bdaf1f3a8" aria-hidden="true">T</span>
+							<span class="vote-name">TurtleBeeMaster <span>(TurtleBee)</span></span>
+							<span class="vote-count" id="vote-count-turtlebee">—</span>
+						</span>
+					</label>
+				</div>
+
+				<button class="vote-submit" type="submit" disabled>Save my vote</button>
+				<p class="vote-status" id="vote-status" role="status" aria-live="polite">Shared voting is loading...</p>
+			</form>
+		</section>
+
+		<section class="community-polls-section" aria-labelledby="community-polls-heading">
+			<header class="community-polls-heading">
+				<p class="section-label">COMMUNITY VOTES</p>
+				<h2 id="community-polls-heading">Community <span>Polls</span></h2>
+			</header>
+			<div id="community-polls" class="community-polls-list" aria-live="polite">
+				<p class="community-polls-status">Loading community polls...</p>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

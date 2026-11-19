@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#080B14">
+	<meta name="description" content="Explore the East SMP world with the interactive BlueMap.">
+	<title>East SMP — World Map</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/navbar.css">
+	<link rel="stylesheet" href="../styles/dropdown.css">
+	<link rel="stylesheet" href="../styles/map.css">
+	<script src="../functions/navigation.js" defer></script>
+	<script src="../functions/dropdown.js" defer></script>
+	<script src="../functions/eastsmp.js" defer></script>
+	<script src="../functions/bluemap-config.js" defer></script>
+	<script src="../functions/bluemap.js" defer></script>
+</head>
+<body class="map-page">
+	<header class="site-header">
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+			<span class="sr-only">Toggle navigation</span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<a class="brand" href="index.html#home" aria-label="East SMP home">
+			<span class="brand-mark" aria-hidden="true">E</span>
+			<span>EAST <span class="brand-light">SMP</span></span>
+		</a>
+
+		<a class="top-join" href="https://discord.gg/mrUUjDzKrj" target="_blank" rel="noopener noreferrer">
+			Join Discord <span aria-hidden="true">↗</span>
+		</a>
+
+		<nav class="site-nav" id="site-nav" aria-label="Main navigation">
+			<a href="index.html#home">Home</a>
+			<a href="index.html#official-rules">Rules</a>
+			<a href="index.html#server-info">Server Info</a>
+			<a href="story.html">Story</a>
+			<a href="map.html" aria-current="page">Map</a>
+			<a href="roles.html">Roles</a>
+			<a href="applications.html">Applications</a>
+			<a href="announcements.html">Announcements</a>
+			<a href="events.html">Events</a>
+			<a href="voting.html">Voting</a>
+			<a href="update.html">Updates</a>
+			<a class="nav-join" href="index.html#join">Join the Discord <span aria-hidden="true">↓</span></a>
+		</nav>
+	</header>
+
+	<details class="server-status-dropdown" data-server-address="n-dal-1.folium.host:25711">
+		<summary>
+			<span class="status-summary-title">Server Status</span>
+			<span class="status-summary-icon" aria-hidden="true"></span>
+		</summary>
+		<div class="status-panel" aria-live="polite">
+			<div class="status-server-state">
+				<span class="status-indicator" id="minecraft-status-indicator" aria-hidden="true"></span>
+				<strong id="minecraft-status-text">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Players:</span>
+				<strong id="minecraft-player-count">Checking...</strong>
+			</div>
+			<p class="status-last-checked">Last Checked: <time id="minecraft-last-checked">Checking...</time></p>
+			<div class="status-divider"></div>
+			<h2 class="status-discord-heading">Discord</h2>
+			<div class="status-metric">
+				<span>Online Members:</span>
+				<strong id="discord-online-count">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Total Members:</span>
+				<strong id="discord-total-count">Checking...</strong>
+			</div>
+		</div>
+	</details>
+
+	<main id="server-map">
+		<header class="map-title">
+			<p class="section-label"><span>01</span> / EXPLORE THE WORLD</p>
+			<h1>East SMP <span>Map</span></h1>
+			<p>Explore the Overworld and any configured Nether and End maps in interactive 3D.</p>
+		</header>
+
+		<section class="map-content" aria-label="Interactive BlueMap">
+			<div class="map-frame-wrap">
+				<div class="map-notice" id="bluemap-notice" role="status">
+					<p class="section-label">BLUEMAP SETUP</p>
+					<h2>Server map setup is in progress</h2>
+					<p id="bluemap-notice-text">BlueMap is not connected yet. Install it on the Minecraft server, expose its web port, then add the public map URL to <code>functions/bluemap-config.js</code>.</p>
+					<a class="map-link" href="https://bluemap.bluecolored.de/wiki/getting-started/Installation.html" target="_blank" rel="noopener noreferrer">BlueMap installation guide <span aria-hidden="true">↗</span></a>
+				</div>
+				<iframe class="map-frame" id="bluemap-frame" title="Interactive East SMP world map" allowfullscreen loading="lazy" hidden></iframe>
+			</div>
+			<a class="map-open-link" id="bluemap-open-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Open the map in a new tab ↗</a>
+			<p class="map-privacy-note">Online player locations are public on this map. Use the map’s dimension selector and marker list to explore configured worlds and landmarks.</p>
+		</section>
+	</main>
+</body>
+</html>

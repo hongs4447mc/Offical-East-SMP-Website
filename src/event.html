@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#080B14">
+	<meta name="description" content="Event details for the East SMP community.">
+	<title>East SMP — Event Details</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/navbar.css">
+	<link rel="stylesheet" href="../styles/events.css">
+	<script src="../functions/navigation.js" defer></script>
+	<script src="../functions/supabase-config.js" defer></script>
+	<script src="../functions/event-detail.js" defer></script>
+</head>
+<body class="events-page event-detail-page">
+	<header class="site-header">
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+			<span class="sr-only">Toggle navigation</span><span></span><span></span><span></span>
+		</button>
+		<a class="brand" href="index.html#home" aria-label="East SMP home">
+			<span class="brand-mark" aria-hidden="true">E</span><span>EAST <span class="brand-light">SMP</span></span>
+		</a>
+		<a class="top-join" href="https://discord.gg/mrUUjDzKrj" target="_blank" rel="noopener noreferrer">Join Discord <span aria-hidden="true">↗</span></a>
+		<nav class="site-nav" id="site-nav" aria-label="Main navigation">
+			<a href="index.html#home">Home</a>
+			<a href="index.html#official-rules">Rules</a>
+			<a href="index.html#server-info">Server Info</a>
+			<a href="story.html">Story</a>
+			<a href="map.html">Map</a>
+			<a href="roles.html">Roles</a>
+			<a href="applications.html">Applications</a>
+			<a href="announcements.html">Announcements</a>
+			<a href="events.html" aria-current="page">Events</a>
+			<a href="voting.html">Voting</a>
+			<a href="update.html">Updates</a>
+			<a class="nav-join" href="index.html#join">Join the Discord <span aria-hidden="true">↓</span></a>
+		</nav>
+	</header>
+
+	<main class="event-detail-main">
+		<a class="event-back-link" href="events.html">← All events</a>
+		<p class="calendar-status" id="event-status" role="status" aria-live="polite">Loading event...</p>
+		<article id="event-detail" hidden>
+			<header class="event-detail-heading">
+				<p class="event-category" id="event-category"></p>
+				<h1 id="event-title"></h1>
+				<p class="event-description" id="event-description"></p>
+				<img class="event-banner" id="event-banner" alt="" hidden>
+				<p class="event-countdown" id="event-countdown" role="status" aria-live="polite"></p>
+				<p class="event-timezone-note">Times are shown in your local timezone.</p>
+			</header>
+			<div class="event-detail-grid">
+				<section class="event-detail-card" aria-labelledby="event-schedule-heading">
+					<h2 id="event-schedule-heading">Schedule &amp; registration</h2>
+					<dl class="event-detail-list" id="event-schedule"></dl>
+				</section>
+				<section class="event-detail-card" id="event-rules-section" hidden>
+					<h2>Rules</h2><p class="event-long-text" id="event-rules"></p>
+				</section>
+				<section class="event-detail-card" id="event-requirements-section" hidden>
+					<h2>Requirements</h2><p class="event-long-text" id="event-requirements"></p>
+				</section>
+				<section class="event-detail-card" id="event-results-section" hidden>
+					<h2>Results</h2><p class="event-long-text" id="event-results"></p>
+				</section>
+			</div>
+		</article>
+	</main>
+</body>
+</html>

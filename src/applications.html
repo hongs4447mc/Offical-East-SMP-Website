@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#080B14">
+	<meta name="description" content="Apply to become part of the East SMP team.">
+	<title>East SMP — Applications</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/navbar.css">
+	<link rel="stylesheet" href="../styles/dropdown.css">
+	<link rel="stylesheet" href="../styles/applications.css">
+	<script src="../functions/navigation.js" defer></script>
+	<script src="../functions/dropdown.js" defer></script>
+	<script src="../functions/eastsmp.js" defer></script>
+</head>
+<body class="applications-page">
+	<header class="site-header">
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+			<span class="sr-only">Toggle navigation</span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<a class="brand" href="index.html#home" aria-label="East SMP home">
+			<span class="brand-mark" aria-hidden="true">E</span>
+			<span>EAST <span class="brand-light">SMP</span></span>
+		</a>
+
+		<a class="top-join" href="https://discord.gg/mrUUjDzKrj" target="_blank" rel="noopener noreferrer">
+			Join Discord <span aria-hidden="true">↗</span>
+		</a>
+
+		<nav class="site-nav" id="site-nav" aria-label="Main navigation">
+			<a href="index.html#home">Home</a>
+			<a href="index.html#official-rules">Rules</a>
+			<a href="index.html#server-info">Server Info</a>
+			<a href="story.html">Story</a>
+			<a href="map.html">Map</a>
+			<a href="roles.html">Roles</a>
+			<a href="#applications" aria-current="page">Applications</a>
+			<a href="announcements.html">Announcements</a>
+			<a href="events.html">Events</a>
+			<a href="voting.html">Voting</a>
+			<a href="update.html">Updates</a>
+			<a class="nav-join" href="index.html#join">Join the Discord <span aria-hidden="true">↓</span></a>
+		</nav>
+	</header>
+
+	<details class="server-status-dropdown" data-server-address="n-dal-1.folium.host:25711">
+		<summary>
+			<span class="status-summary-title">Server Status</span>
+			<span class="status-summary-icon" aria-hidden="true"></span>
+		</summary>
+		<div class="status-panel" aria-live="polite">
+			<div class="status-server-state">
+				<span class="status-indicator" id="minecraft-status-indicator" aria-hidden="true"></span>
+				<strong id="minecraft-status-text">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Players:</span>
+				<strong id="minecraft-player-count">Checking...</strong>
+			</div>
+			<p class="status-last-checked">Last Checked: <time id="minecraft-last-checked">Checking...</time></p>
+			<div class="status-divider"></div>
+			<h2 class="status-discord-heading">Discord</h2>
+			<div class="status-metric">
+				<span>Online Members:</span>
+				<strong id="discord-online-count">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Total Members:</span>
+				<strong id="discord-total-count">Checking...</strong>
+			</div>
+		</div>
+	</details>
+
+	<main id="applications">
+		<header class="applications-title">
+			<p class="section-label"><span>01</span> / JOIN THE TEAM</p>
+			<h1>East SMP <span>Applications</span></h1>
+			<p>Choose the application that fits the role you want.</p>
+		</header>
+
+		<div class="applications-content">
+			<section class="application-cards" aria-label="Available applications">
+				<article class="application-card">
+					<p class="application-label">Trusted (OP)</p>
+					<h2>Trusted (OP)</h2>
+					<p>Apply for the trusted player role with OP access.</p>
+					<a class="application-link" href="https://forms.gle/p5T9uZuXb8QYaqLK7" target="_blank" rel="noopener noreferrer">Open application <span aria-hidden="true">↗</span></a>
+				</article>
+
+				<article class="application-card">
+					<p class="application-label">Trusted (Non-OP)</p>
+					<h2>Trusted (Non-OP)</h2>
+					<p>Apply for the trusted player role without OP access.</p>
+					<a class="application-link" href="https://forms.gle/yQ6Vx5bNkjxSbrFu9" target="_blank" rel="noopener noreferrer">Open application <span aria-hidden="true">↗</span></a>
+				</article>
+
+				<article class="application-card">
+					<p class="application-label">Hongs Event Manager</p>
+					<h2>Hongs Event Manager</h2>
+					<p>Apply to help plan and manage Hongs events.</p>
+					<a class="application-link" href="https://forms.gle/cDxx7h8GhWNZPKJ49" target="_blank" rel="noopener noreferrer">Open application <span aria-hidden="true">↗</span></a>
+				</article>
+			</section>
+
+			<section class="application-requirements" aria-labelledby="requirements-title">
+				<p class="application-label">BEFORE YOU APPLY</p>
+				<h2 id="requirements-title">Requirements</h2>
+				<ul>
+					<li>You must be active in Minecraft at least 5 days a week. If you have sports or are going somewhere, that is fine.</li>
+					<li>You must be able to communicate with both Hongs and East (not just one) using Simple Voice Chat and Discord.</li>
+				</ul>
+			</section>
+		</div>
+	</main>
+</body>
+</html>

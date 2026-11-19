@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#080B14">
+	<meta name="description" content="Meet the East SMP roles and team members.">
+	<title>East SMP — Roles</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/navbar.css">
+	<link rel="stylesheet" href="../styles/dropdown.css">
+	<link rel="stylesheet" href="../styles/roles.css">
+	<script src="../functions/navigation.js" defer></script>
+	<script src="../functions/dropdown.js" defer></script>
+	<script src="../functions/eastsmp.js" defer></script>
+	<script src="../functions/player-heads.js" defer></script>
+	<script src="../functions/supabase-config.js" defer></script>
+	<script src="../functions/community-profiles.js" defer></script>
+</head>
+<body class="roles-page">
+	<header class="site-header">
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+			<span class="sr-only">Toggle navigation</span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<a class="brand" href="index.html#home" aria-label="East SMP home">
+			<span class="brand-mark" aria-hidden="true">E</span>
+			<span>EAST <span class="brand-light">SMP</span></span>
+		</a>
+
+		<a class="top-join" href="https://discord.gg/mrUUjDzKrj" target="_blank" rel="noopener noreferrer">
+			Join Discord <span aria-hidden="true">↗</span>
+		</a>
+
+		<nav class="site-nav" id="site-nav" aria-label="Main navigation">
+			<a href="index.html#home">Home</a>
+			<a href="index.html#official-rules">Rules</a>
+			<a href="index.html#server-info">Server Info</a>
+			<a href="story.html">Story</a>
+			<a href="map.html">Map</a>
+			<a href="#roles" aria-current="page">Roles</a>
+			<a href="applications.html">Applications</a>
+			<a href="announcements.html">Announcements</a>
+			<a href="events.html">Events</a>
+			<a href="voting.html">Voting</a>
+			<a href="update.html">Updates</a>
+			<a class="nav-join" href="index.html#join">Join the Discord <span aria-hidden="true">↓</span></a>
+		</nav>
+	</header>
+
+	<details class="server-status-dropdown" data-server-address="n-dal-1.folium.host:25711">
+		<summary>
+			<span class="status-summary-title">Server Status</span>
+			<span class="status-summary-icon" aria-hidden="true"></span>
+		</summary>
+		<div class="status-panel" aria-live="polite">
+			<div class="status-server-state">
+				<span class="status-indicator" id="minecraft-status-indicator" aria-hidden="true"></span>
+				<strong id="minecraft-status-text">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Players:</span>
+				<strong id="minecraft-player-count">Checking...</strong>
+			</div>
+			<p class="status-last-checked">Last Checked: <time id="minecraft-last-checked">Checking...</time></p>
+			<div class="status-divider"></div>
+			<h2 class="status-discord-heading">Discord</h2>
+			<div class="status-metric">
+				<span>Online Members:</span>
+				<strong id="discord-online-count">Checking...</strong>
+			</div>
+			<div class="status-metric">
+				<span>Total Members:</span>
+				<strong id="discord-total-count">Checking...</strong>
+			</div>
+		</div>
+	</details>
+
+	<main id="roles">
+		<header class="roles-title">
+			<p class="section-label"><span>01</span> / EAST SMP TEAM</p>
+			<h1>East SMP <span>Roles</span></h1>
+			<p>Website Version: <strong>beta 1.0</strong><br>Last Updated: November 2026</p>
+		</header>
+
+		<div class="roles-layout">
+			<div class="role-sections">
+			<section class="role-section" id="owners" aria-labelledby="owners-title">
+				<header class="role-section-heading">
+					<p class="section-label"><span>01</span> / LEADERSHIP</p>
+					<h2 id="owners-title">East SMP <span>Owners</span></h2>
+				</header>
+				<div class="roles-grid">
+					<article class="role-card role-blue">
+						<div class="role-avatar player-head" data-minecraft-name="Hongs4447" aria-hidden="true">H</div>
+						<p class="role-label">SERVER OWNER</p>
+						<h3>Hongs4447</h3>
+						<div class="role-line"></div>
+						<a class="role-link" href="https://youtube.com/@hongs4447" target="_blank" rel="noopener noreferrer">YouTube <span aria-hidden="true">↗</span></a>
+					</article>
+					<article class="role-card role-red">
+						<div class="role-avatar player-head" data-minecraft-name="Eastboygames" aria-hidden="true">E</div>
+						<p class="role-label">SERVER OWNER</p>
+						<h3>Eastboygames</h3>
+						<div class="role-line"></div>
+						<a class="role-link" href="https://youtube.com/@eastboygames" target="_blank" rel="noopener noreferrer">YouTube <span aria-hidden="true">↗</span></a>
+					</article>
+				</div>
+			</section>
+
+			<section class="role-section" id="protagonists" aria-labelledby="protagonists-title">
+				<header class="role-section-heading">
+					<p class="section-label"><span>02</span> / MAIN CAST</p>
+					<h2 id="protagonists-title">East SMP <span>Protagonists</span></h2>
+				</header>
+				<div class="roles-grid">
+					<article class="role-card role-blue">
+						<div class="role-avatar player-head" data-minecraft-name="Hongs4447" aria-hidden="true">H</div>
+						<p class="role-label">SERVER OWNER / PROTAGONIST</p>
+						<h3>Hongs4447</h3>
+						<div class="role-line"></div>
+						<a class="role-link" href="https://youtube.com/@hongs4447" target="_blank" rel="noopener noreferrer">YouTube <span aria-hidden="true">↗</span></a>
+					</article>
+					<article class="role-card role-red">
+						<div class="role-avatar player-head" data-minecraft-name="Eastboygames" aria-hidden="true">E</div>
+						<p class="role-label">SERVER OWNER / PROTAGONIST</p>
+						<h3>Eastboygames</h3>
+						<div class="role-line"></div>
+						<a class="role-link" href="https://youtube.com/@eastboygames" target="_blank" rel="noopener noreferrer">YouTube <span aria-hidden="true">↗</span></a>
+					</article>
+					<article class="role-card role-green">
+						<div class="role-avatar player-head" data-minecraft-name="TurtleBeeMaster" data-minecraft-uuid="638a3bdb00974e05bd99324bdaf1f3a8" data-head-url="https://crafthead.net/avatar/638a3bdb00974e05bd99324bdaf1f3a8" aria-hidden="true">T</div>
+						<p class="role-label">PROTAGONIST</p>
+						<h3>TurtleBeeMaster</h3>
+						<div class="role-line"></div>
+						<a class="role-link" href="https://youtube.com/@TurtleBeeMaster" target="_blank" rel="noopener noreferrer">YouTube <span aria-hidden="true">↗</span></a>
+					</article>
+				</div>
+			</section>
+
+			<section class="role-section" id="trusted" aria-labelledby="trusted-title">
+				<header class="role-section-heading">
+					<p class="section-label"><span>03</span> / COMMUNITY</p>
+					<h2 id="trusted-title">Trusted <span>Players</span></h2>
+				</header>
+				<p class="role-coming-soon">Coming soon...</p>
+			</section>
+
+			<section class="role-section" id="main-character" aria-labelledby="main-character-title">
+				<header class="role-section-heading">
+					<p class="section-label"><span>04</span> / MAIN CAST</p>
+					<h2 id="main-character-title">Main <span>Character</span></h2>
+				</header>
+				<p class="role-coming-soon">Coming soon...</p>
+			</section>
+
+			<section class="role-section" id="developers" aria-labelledby="developers-title">
+				<header class="role-section-heading">
+					<p class="section-label"><span>05</span> / WEBSITE</p>
+					<h2 id="developers-title">Website <span>Developers</span></h2>
+				</header>
+				<div class="roles-grid">
+					<article class="role-card role-blue">
+						<div class="role-avatar player-head" data-minecraft-name="Hongs4447" aria-hidden="true">H</div>
+						<p class="role-label">DEVELOPER</p>
+						<h3>Hongs4447</h3>
+						<div class="role-line"></div>
+						<a class="role-link" href="https://youtube.com/@hongs4447" target="_blank" rel="noopener noreferrer">YouTube <span aria-hidden="true">↗</span></a>
+					</article>
+				</div>
+			</section>
+
+			<section class="role-section" id="helpers" aria-labelledby="helpers-title">
+				<header class="role-section-heading">
+					<p class="section-label"><span>06</span> / COMMUNITY</p>
+					<h2 id="helpers-title">East SMP <span>Helpers</span></h2>
+				</header>
+				<p class="role-coming-soon">Helpers coming soon...</p>
+			</section>
+
+			<section class="role-section" id="beta-testers" aria-labelledby="beta-testers-title">
+				<header class="role-section-heading">
+					<p class="section-label"><span>07</span> / EARLY ACCESS</p>
+					<h2 id="beta-testers-title">Beta <span>Testers</span></h2>
+				</header>
+				<p class="role-coming-soon">Coming soon...</p>
+			</section>
+
+			<section class="role-section" id="creators" aria-labelledby="creators-title">
+				<header class="role-section-heading">
+					<p class="section-label"><span>08</span> / CONTENT</p>
+					<h2 id="creators-title">East SMP <span>Creators</span></h2>
+				</header>
+				<p class="role-coming-soon">Coming soon...</p>
+			</section>
+
+			<section class="role-section" id="community-profiles" aria-labelledby="community-profiles-title">
+				<header class="role-section-heading">
+					<p class="section-label"><span>09</span> / COMMUNITY</p>
+					<h2 id="community-profiles-title">Community <span>Profiles</span></h2>
+				</header>
+				<div class="roles-grid" id="community-profiles-list" aria-live="polite">
+					<p class="role-coming-soon">Loading public profiles...</p>
+				</div>
+			</section>
+
+			</div>
+			<nav class="role-tabs" aria-label="Role categories">
+				<a href="#owners">Owners</a>
+				<a href="#protagonists">Protagonists</a>
+				<a href="#trusted">Trusted</a>
+				<a href="#main-character">Main Character</a>
+				<a href="#developers">Developers</a>
+				<a href="#helpers">Helpers</a>
+				<a href="#beta-testers">Beta Testers</a>
+				<a href="#creators">Creators</a>
+				<a href="#community-profiles">Community Profiles</a>
+			</nav>
+		</div>
+	</main>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#080B14">
+	<meta name="description" content="Private East SMP staff dashboard.">
+	<title>East SMP — Staff Dashboard</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/admin.css">
+	<script src="../functions/supabase-config.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+	<script src="../functions/admin.js" defer></script>
+</head>
+<body class="admin-page">
+	<header class="admin-header">
+		<a class="admin-brand" href="index.html">
+			<span class="brand-mark" aria-hidden="true">E</span>
+			<span>EAST <span class="brand-light">SMP</span> <small>STAFF</small></span>
+		</a>
+		<div class="admin-header-actions">
+			<a href="index.html">Back to website</a>
+			<button class="admin-button admin-button-quiet" id="admin-sign-out" type="button" hidden>Sign out</button>
+		</div>
+	</header>
+
+	<main class="admin-main">
+		<header class="admin-page-title">
+			<p class="section-label"><span>STAFF</span> / COMMUNITY CONTROL</p>
+			<h1>Admin <span>Dashboard</span></h1>
+			<p>Manage East SMP community content and records.</p>
+		</header>
+
+		<p class="admin-status" id="admin-status" role="status" aria-live="polite">Connecting to Supabase...</p>
+
+		<section class="admin-gate" id="admin-signed-out" hidden>
+			<h2>Staff sign-in</h2>
+			<p>Sign in with an approved Discord account. Access is limited to assigned staff roles.</p>
+			<button class="admin-button" id="admin-sign-in" type="button">Continue with Discord</button>
+		</section>
+
+		<section class="admin-gate" id="admin-access-denied" hidden>
+			<h2>Staff access required</h2>
+			<p id="admin-access-message">Your account is signed in, but it does not have a dashboard role. Give this user ID to an Owner:</p>
+			<code class="admin-user-id" id="admin-user-id"></code>
+		</section>
+
+		<div class="admin-layout" id="admin-dashboard" hidden>
+			<aside class="admin-sidebar" aria-label="Dashboard sections">
+				<p class="admin-sidebar-label">WORKSPACE</p>
+				<nav class="admin-tabs" id="admin-tabs">
+					<button type="button" data-panel="overview">Overview</button>
+					<button type="button" data-panel="players">Players</button>
+					<button type="button" data-panel="moderation">Warnings &amp; bans</button>
+					<button type="button" data-panel="announcements">Announcements</button>
+					<button type="button" data-panel="events">Events</button>
+					<button type="button" data-panel="polls">Polls</button>
+					<button type="button" data-panel="profiles">Profiles</button>
+					<button type="button" data-panel="staff">Staff &amp; roles</button>
+					<button type="button" data-panel="audit">Audit log</button>
+				</nav>
+			</aside>
+
+			<div class="admin-workspace">
+				<section class="admin-panel" data-section="overview">
+					<div class="panel-heading">
+						<div><p class="section-label">COMMUNITY</p><h2>Overview</h2></div>
+						<p id="admin-role-label"></p>
+					</div>
+					<div class="admin-stats" id="admin-stats"></div>
+					<p class="admin-help">Warnings and bans are staff records only; they do not send commands to the Minecraft server.</p>
+				</section>
+
+				<section class="admin-panel" data-section="players" hidden>
+					<div class="panel-heading"><div><p class="section-label">DIRECTORY</p><h2>Players</h2></div></div>
+					<form class="admin-form" id="player-form">
+						<input type="hidden" name="id">
+						<label>Minecraft name<input name="minecraft_name" required maxlength="32"></label>
+						<label>Minecraft UUID <span>(optional)</span><input name="minecraft_uuid" maxlength="36" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"></label>
+						<label class="form-wide">Staff notes<textarea name="notes" rows="3"></textarea></label>
+						<div class="form-actions"><button class="admin-button" type="submit">Save player</button><button class="admin-button admin-button-quiet" type="reset">Clear</button></div>
+					</form>
+					<div class="admin-table-wrap" id="players-table"></div>
+				</section>
+
+				<section class="admin-panel" data-section="moderation" hidden>
+					<div class="panel-heading"><div><p class="section-label">STAFF RECORDS</p><h2>Warnings &amp; bans</h2></div></div>
+					<form class="admin-form" id="moderation-form">
+						<label>Player<select name="player_id" required></select></label>
+						<label>Action<select name="action"><option value="warning">Warning</option><option value="ban">Ban record</option></select></label>
+						<label class="form-wide">Reason<textarea name="reason" rows="3" required maxlength="2000"></textarea></label>
+						<label>Expires <span>(optional)</span><input name="expires_at" type="datetime-local"></label>
+						<div class="form-actions"><button class="admin-button" type="submit">Save record</button></div>
+					</form>
+					<div class="admin-table-wrap" id="moderation-table"></div>
+				</section>
+
+				<section class="admin-panel" data-section="announcements" hidden>
+					<div class="panel-heading"><div><p class="section-label">PUBLIC CONTENT</p><h2>Announcements</h2></div></div>
+					<form class="admin-form" id="announcement-form">
+						<input type="hidden" name="id">
+						<label class="form-wide">Title<input name="title" required maxlength="160"></label>
+						<label class="form-wide">Announcement<textarea name="body" rows="5" required maxlength="10000"></textarea></label>
+						<label class="admin-checkbox"><input name="published" type="checkbox"> Publish on the website</label>
+						<div class="form-actions"><button class="admin-button" type="submit">Save announcement</button><button class="admin-button admin-button-quiet" type="reset">Clear</button></div>
+					</form>
+					<div class="admin-table-wrap" id="announcements-table"></div>
+				</section>
+
+				<section class="admin-panel" data-section="events" hidden>
+					<div class="panel-heading"><div><p class="section-label">COMMUNITY CALENDAR</p><h2>Events</h2></div></div>
+					<p class="admin-help">Published events appear in the public calendar. Registration is managed by event staff; player names are visible only in this dashboard.</p>
+					<form class="admin-form" id="event-form">
+						<input type="hidden" name="id">
+						<label class="form-wide">Event name<input name="title" required maxlength="160"></label>
+						<label>Category<select name="category" required><option value="community">Community</option><option value="pvp">PvP</option><option value="building">Building</option><option value="survival">Survival</option><option value="special">Special</option><option value="maintenance">Maintenance</option></select></label>
+						<label>Banner image URL <span>(optional)</span><input name="banner_url" type="url" maxlength="1000" placeholder="https://..."></label>
+						<label class="form-wide">Description<textarea name="description" rows="4" maxlength="10000"></textarea></label>
+						<label class="form-wide">Rules<textarea name="rules" rows="3" maxlength="5000"></textarea></label>
+						<label>Starts<input name="starts_at" type="datetime-local" required></label>
+						<label>Ends <span>(optional)</span><input name="ends_at" type="datetime-local"></label>
+						<label>Host<input name="host" maxlength="120"></label>
+						<label>Location<input name="location" maxlength="200" placeholder="Build area, arena, or world"></label>
+						<label>Coordinates <span>(optional)</span><input name="coordinates" maxlength="100" placeholder="x, y, z"></label>
+						<label>Capacity <span>(blank for unlimited)</span><input name="capacity" type="number" min="1" step="1"></label>
+						<label class="form-wide">Requirements<textarea name="requirements" rows="3" maxlength="3000"></textarea></label>
+						<label class="form-wide">Results <span>(optional; can be added later)</span><textarea name="results" rows="3" maxlength="5000"></textarea></label>
+						<label class="admin-checkbox"><input name="registration_open" type="checkbox" checked> Allow staff to add participants</label>
+						<label class="admin-checkbox"><input name="published" type="checkbox"> Publish on the website</label>
+						<div class="form-actions"><button class="admin-button" type="submit">Save event</button><button class="admin-button admin-button-quiet" type="reset">Clear</button></div>
+					</form>
+					<div class="admin-table-wrap" id="events-table"></div>
+					<section class="event-participant-manager" id="event-participant-manager" aria-labelledby="event-participant-title" hidden>
+						<div class="panel-heading"><div><p class="section-label">STAFF-ONLY ROSTER</p><h3 id="event-participant-title">Participants</h3></div></div>
+						<p class="admin-help">Participant names are private. The public calendar displays only the count. Adding players stops when the event reaches capacity.</p>
+						<form class="admin-form" id="event-participant-form">
+							<input type="hidden" name="event_id">
+							<label>Minecraft username<input name="minecraft_name" required maxlength="16" autocomplete="off"></label>
+							<div class="form-actions"><button class="admin-button" type="submit">Add participant</button></div>
+						</form>
+						<p class="admin-help" id="event-participant-capacity-status" role="status"></p>
+						<div class="admin-table-wrap" id="event-participants-table"></div>
+					</section>
+				</section>
+
+				<section class="admin-panel" data-section="polls" hidden>
+					<div class="panel-heading"><div><p class="section-label">COMMUNITY VOTES</p><h2>Polls</h2></div></div>
+					<form class="admin-form" id="poll-form">
+						<label class="form-wide">Question<input name="title" required maxlength="200"></label>
+						<label class="form-wide">Details<textarea name="description" rows="3" maxlength="2000"></textarea></label>
+						<label class="form-wide">Options <span>(one per line, at least two)</span><textarea name="options" rows="4" required></textarea></label>
+						<label class="admin-checkbox"><input name="is_open" type="checkbox"> Open poll after saving</label>
+						<div class="form-actions"><button class="admin-button" type="submit">Create poll</button></div>
+					</form>
+					<div class="admin-table-wrap" id="polls-table"></div>
+				</section>
+
+				<section class="admin-panel" data-section="profiles" hidden>
+					<div class="panel-heading"><div><p class="section-label">PLAYER PAGES</p><h2>Profiles</h2></div></div>
+					<form class="admin-form" id="profile-form">
+						<label>Player<select name="player_id" required></select></label>
+						<label>Display name<input name="display_name" required maxlength="80"></label>
+						<label class="form-wide">Bio<textarea name="bio" rows="4" maxlength="2000"></textarea></label>
+						<label class="form-wide">Avatar image URL <span>(optional)</span><input name="avatar_url" type="url" maxlength="1000"></label>
+						<label class="admin-checkbox"><input name="is_public" type="checkbox"> Public profile</label>
+						<div class="form-actions"><button class="admin-button" type="submit">Save profile</button><button class="admin-button admin-button-quiet" type="reset">Clear</button></div>
+					</form>
+					<div class="admin-table-wrap" id="profiles-table"></div>
+				</section>
+
+				<section class="admin-panel" data-section="staff" hidden>
+					<div class="panel-heading"><div><p class="section-label">ACCESS CONTROL</p><h2>Staff &amp; roles</h2></div></div>
+					<p class="admin-help">Only Owners can assign, change, or revoke roles. Staff sign in with Discord first, then share their user ID with an Owner.</p>
+					<form class="admin-form" id="staff-form">
+						<label class="form-wide">Supabase user ID<input name="user_id" required inputmode="text" maxlength="36" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"></label>
+						<label>Role<select name="role"><option value="administrator">Administrator</option><option value="moderator">Moderator</option><option value="event_manager">Event Manager</option><option value="announcement_manager">Announcement Manager</option><option value="owner">Owner</option></select></label>
+						<p class="admin-help form-wide" id="staff-form-mode" aria-live="polite" hidden></p>
+						<div class="form-actions"><button class="admin-button" type="submit">Assign role</button><button class="admin-button admin-button-quiet" id="staff-form-cancel" type="button" hidden>Cancel</button></div>
+					</form>
+					<div class="admin-table-wrap" id="staff-table"></div>
+				</section>
+
+				<section class="admin-panel" data-section="audit" hidden>
+					<div class="panel-heading"><div><p class="section-label">ACCOUNTABILITY</p><h2>Audit log</h2></div></div>
+					<p class="admin-help">The latest 100 dashboard changes are shown here.</p>
+					<div class="admin-table-wrap" id="audit-table"></div>
+				</section>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
