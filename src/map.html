@@ -16,7 +16,7 @@
 	<script src="../functions/navigation.js" defer></script>
 	<script src="../functions/dropdown.js" defer></script>
 	<script src="../functions/eastsmp.js" defer></script>
-	<script src="../functions/bluemap-config.js" defer></script>
+	<script src="../functions/bluemap-config.js?v=2" defer></script>
 	<script src="../functions/bluemap.js" defer></script>
 </head>
 <body class="map-page">
@@ -91,8 +91,8 @@
 		<section class="map-content" aria-label="Interactive BlueMap">
 			<div class="map-frame-wrap">
 				<div class="map-notice" id="bluemap-notice" role="status">
-					<p class="section-label">BLUEMAP SETUP</p>
-					<h2>Server map setup is in progress</h2>
+					<p class="section-label" id="bluemap-notice-label">BLUEMAP SETUP</p>
+					<h2 id="bluemap-notice-title">Server map setup is in progress</h2>
 					<p id="bluemap-notice-text">BlueMap is not connected yet. Install it on the Minecraft server, expose its web port, then add the public map URL to <code>functions/bluemap-config.js</code>.</p>
 					<a class="map-link" href="https://bluemap.bluecolored.de/wiki/getting-started/Installation.html" target="_blank" rel="noopener noreferrer">BlueMap installation guide <span aria-hidden="true">↗</span></a>
 				</div>
